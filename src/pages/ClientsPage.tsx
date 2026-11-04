@@ -39,7 +39,6 @@ className=
 <th>Acciones</th>
 </tr>
 </thead>
-
 <tbody>
 {clients.map(
 client => (
