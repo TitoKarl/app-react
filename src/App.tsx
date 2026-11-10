@@ -47,7 +47,7 @@ const App: React.FC = () => (
     <IonReactRouter>
       <IonRouterOutlet>
         <Route path="/home" element={<Home />} />
-        <Route path="/" element={<Navigate to="/home" replace />} />
+        <Route path="/" element={<Navigate to="/clients" replace />} />
         <Route path="/clients" element={<ClientsPage />} />
         <Route path="/addclient" element={<NewClientsPage />} />
         <Route path="/edit-client/:id" element={<EditClientPage />} />
