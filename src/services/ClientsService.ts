@@ -19,10 +19,9 @@ export class ClientsService {
         }
         return data;
     }
-    static async addClient(
-        client: Client
-    ) {
-        const { error } =await supabase.from('clients').insert([client]);
+    static async addClient(client: Client) {
+        const { name, email, phone } = client;
+        const { error } =await supabase.from('clients').insert([{ name, email, phone }]);
         if (error) {
         throw error;
         }
@@ -31,7 +30,8 @@ export class ClientsService {
         id: number,
         client: Client
     ) {
-        const { error } =await supabase.from('clients').update(client).eq('id', id);
+        const { name, email, phone } = client;
+        const { error } =await supabase.from('clients').update({ name, email, phone }).eq('id', id);
         if (error) {
             throw error;
         }
